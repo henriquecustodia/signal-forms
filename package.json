@@ -38,6 +38,8 @@
     "@angular/compiler-cli": "^21.0.0-next.0",
     "@tailwindcss/postcss": "^4.1.12",
     "@types/jasmine": "~5.1.0",
+    "daisyui": "^5.1.26",
+    "express": "^5.1.0",
     "jasmine-core": "~5.10.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
@@ -45,6 +47,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "postcss": "^8.5.3",
+    "prettier": "^3.6.2",
     "tailwindcss": "^4.1.12",
     "typescript": "~5.9.2"
   }
