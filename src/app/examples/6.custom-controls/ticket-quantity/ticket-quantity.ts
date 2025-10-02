@@ -2,7 +2,7 @@ import { Component, model, input } from '@angular/core'
 import { FormValueControl, ValidationError } from '@angular/forms/signals'
 
 @Component({
-	selector: 'app-ticket-quantity',
+	selector: 'app-ticket-quantity4',
 	standalone: true,
 	template: `
 		<div>

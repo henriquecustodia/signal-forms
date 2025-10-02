@@ -44,7 +44,7 @@
 
   <fieldset class="fieldset">
     <legend class="fieldset-legend">Quantidade de Ingressos</legend>
-    <app-ticket-quantity [control]="ticketForm.quantity"></app-ticket-quantity>
+    <app-ticket-quantity2 [control]="ticketForm.quantity"></app-ticket-quantity2>
 
     @for (error of ticketForm.quantity().errors(); track error) {
       <p class="label text-red-600">{{ error.message }}</p>

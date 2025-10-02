@@ -1,0 +1,60 @@
+<form>
+  <div class="form-group">
+    <fieldset class="fieldset">
+      <legend class="fieldset-legend">Nome do Participante</legend>
+      <input type="text" class="input w-full" [control]="ticketForm.attendeeName" />
+
+      @for (error of ticketForm.attendeeName().errors(); track error) {
+        <p class="label text-red-600">{{ error.message }}</p>
+      }
+
+      @if (ticketForm.attendeeName().pending()) {
+        <p class="label">Verificando disponibilidade...</p>
+      }
+    </fieldset>
+  </div>
+
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">Tipo de Ingresso</legend>
+    <select class="select w-full" [control]="ticketForm.ticketType">
+      <option disabled selected>Escolha um tipo de ingresso</option>
+      <option value="VIP">VIP</option>
+      <option value="Standard">Standard</option>
+      <option value="Economy">Economy</option>
+    </select>
+
+    @for (error of ticketForm.ticketType().errors(); track error) {
+      <p class="label text-red-600">{{ error.message }}</p>
+    }
+  </fieldset>
+
+  <fieldset class="fieldset">
+    <legend for="attendeeName" class="fieldset-legend">ID do Evento</legend>
+    <input type="text" class="input w-full" [control]="ticketForm.eventId" />
+
+    @for (error of ticketForm.eventId().errors(); track error) {
+      <p class="label text-red-600">{{ error.message }}</p>
+    }
+
+    @if (ticketForm.eventId().pending()) {
+      <p class="label">Verificando disponibilidade...</p>
+    }
+  </fieldset>
+
+
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">Quantidade de Ingressos</legend>
+    <app-ticket-quantity3 [control]="ticketForm.quantity"></app-ticket-quantity3>
+
+    @for (error of ticketForm.quantity().errors(); track error) {
+      <p class="label text-red-600">{{ error.message }}</p>
+    }
+  </fieldset>
+
+  <button type="button" (click)="save()" class="btn btn-primary w-full mt-4">Salvar</button>
+</form>
+
+<div class="mockup-code w-full mt-12">
+  <pre data-prefix="Form"><code>{{ ticketForm().value() | json }}</code></pre>
+  <pre class="mt-5" data-prefix="Signal"><code>{{ ticket() | json }}</code></pre>
+</div>
